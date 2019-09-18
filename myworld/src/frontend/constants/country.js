@@ -1,4 +1,4 @@
 export const country = {
-    156 : "中国"
+    156 : {name: "中国", intl: "cn"}
 
 }
