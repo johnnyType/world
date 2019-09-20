@@ -1,33 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import ReactCountryFlag from "react-country-flag";
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-import TextField from '@material-ui/core/TextField';
+import FlagName from './FlagName';
 
-// const FlagWrapper = styled.div`
+const PanelWrapper = styled.div`
+    width: 450px;
+    margin-left: 30px;
+`;
 
-// `;
-
-const RightPanel = (props) => {
-    const { country } = props;
+const RightPanel = () => {
     return (
-      <>
-        <ReactCountryFlag code={country.intl} styleProps={{width:'200px',height: '100px'}} svg/>
-        <TextField
-        id="outlined-name"
-        label="Country"
-        value={country.name}
-        // onChange={handleChange('name')}
-        margin="normal"
-        variant="outlined"
-      />
-      </>
+        <PanelWrapper>
+            <FlagName/>
+        </PanelWrapper>
     );
 }
 
-const mapStateToProps = state => ({
-  country: state.country
-});
-
-export default connect(mapStateToProps)(RightPanel);
+export default RightPanel;

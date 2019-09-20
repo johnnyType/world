@@ -6,19 +6,26 @@ import {
   Geography,
   Graticule
 } from "react-simple-maps";
+import { connect } from "react-redux";
 
-import { country } from '../constants/country';
+import { selectCountry } from "../redux/actions/countryActions";
+
+const countries = require("i18n-iso-countries");
+const countriesJSON = require("i18n-iso-countries/langs/zh.json");
 
 const wrapperStyles = {
   width: "100%",
-  maxWidth: 980,
+  maxWidth: 1000,
   margin: 0,
 }
 
 class BasicMap extends Component {
 
   handleClick = (e)=> {
-    console.log(country[e.id]);
+    const id = e.id;
+    const lang = countries.toAlpha2(id);
+    const name = countriesJSON.countries[lang.toUpperCase()];
+    this.props.selectCountry({name,id,lang})
   }
 
   render() {
@@ -75,4 +82,8 @@ class BasicMap extends Component {
   }
 }
 
-export default BasicMap;
+const mapDispatchToProps = dispatch => ({
+  selectCountry: ({id,name,lang})=>dispatch(selectCountry({id,name,lang}))
+});
+
+export default connect(null,mapDispatchToProps)(BasicMap);

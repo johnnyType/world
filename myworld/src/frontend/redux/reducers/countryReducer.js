@@ -1,10 +1,11 @@
 import { SELECT_COUNTRY } from '../../constants/actions/countryActions';
-import { country } from '../../constants/country';
 
 const countryDefaultState = {
-    id: "156",
-    name: "中国",
-    intl: "cn"
+    selectedCountry: {
+        id: "156",
+        name: "中国",
+        lang: "cn"
+    }
 }
 
 const countryReducer = (state=countryDefaultState, action) => {
@@ -12,9 +13,11 @@ const countryReducer = (state=countryDefaultState, action) => {
     switch(action.type) {
         case SELECT_COUNTRY:
             return {
-                id: payload.countryId,
-                name: country[payload.countryId].name,
-                intl: country[payload.countryId].intl
+                selectedCountry: {
+                    id: payload.countryId,
+                    name: payload.name,
+                    lang: payload.lang
+                }
             }
         default:
             return state;

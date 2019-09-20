@@ -1,6 +1,6 @@
 import { SELECT_COUNTRY } from '../../constants/actions/countryActions';
 
-export const selectCountry = (countryId) => ({
+export const selectCountry = ({id,name,lang}) => ({
     type: SELECT_COUNTRY,
-    payload: {countryId}
+    payload: {id,name,lang}
 });
