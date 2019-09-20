@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import ReactCountryFlag from "react-country-flag";
 
 import Map from '../common/Map';
 import Header from '../common/Header';
