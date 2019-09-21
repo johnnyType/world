@@ -3,6 +3,7 @@ import {
     Markers,
     Marker
 } from "react-simple-maps";
+import { connect } from 'react-redux';
 
 const MyMarker = (props) => {
     return (
@@ -53,5 +54,10 @@ const MyMarker = (props) => {
         </Markers>
     );
 }
+
+const matStateToProps = state => {
+    
+}
+
 
 export default MyMarker;

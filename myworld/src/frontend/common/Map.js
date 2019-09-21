@@ -74,7 +74,7 @@ class BasicMap extends Component {
                 />
               ))}
             </Geographies>
-            <Graticule/>
+            <Graticule step={[20,8]}/>
           </ZoomableGroup>
         </ComposableMap>
       </div>

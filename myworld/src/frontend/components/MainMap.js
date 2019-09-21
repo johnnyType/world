@@ -13,6 +13,7 @@ const Section = styled.div`
       width: 100%;
       margin-left: 0;
       display: flex;
+      background-color: white;
       // justify-content: space-between;
   `;
 

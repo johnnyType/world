@@ -2,12 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactCountryFlag from "react-country-flag";
 import styled from 'styled-components';
+import { withStyles } from "@material-ui/core/styles";
 
 import TextField from '@material-ui/core/TextField';
-
-// console.log(props.countries.countries['CN'])
-  // console.log(countries.toAlpha2(156))
-  // console.log(countries.getName('840','en')); 
 
 const Wrapper = styled.div`
       height: 100px;
