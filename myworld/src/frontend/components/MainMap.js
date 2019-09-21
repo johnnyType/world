@@ -14,7 +14,6 @@ const Section = styled.div`
       margin-left: 0;
       display: flex;
       background-color: white;
-      // justify-content: space-between;
   `;
 
 function App() {
