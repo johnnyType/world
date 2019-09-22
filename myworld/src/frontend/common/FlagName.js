@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 const FlagerWrapper = styled.div`
       text-align: center;
       margin-top: 20px;
+      object-fit: fill;
 `;
 
 const FlagName = (props) => {
