@@ -1,0 +1,1 @@
+export const UPDATE_MARKER = "UPDATE_MARKER";
