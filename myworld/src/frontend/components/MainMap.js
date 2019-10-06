@@ -6,7 +6,7 @@ import Header from '../common/Header';
 import Footer from '../common/Footer';
 import RightPanel from '../common/RightPanel';
 
-import { MainPage_Header, Footer_text } from '../constants/ui'; 
+import { MainPage_Header, Footer_text } from '../constants/ui/index';
 
 const Section = styled.div`
       box-sizing: border-box;

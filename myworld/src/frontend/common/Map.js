@@ -5,14 +5,12 @@ import {
   Geographies,
   Geography,
   Graticule,
-  Markers,
-  Marker
 } from "react-simple-maps";
 import { connect } from "react-redux";
-import { scaleLinear } from "d3-scale";
 
 import { selectCountry } from "../redux/actions/countryActions";
-import { popularCities } from '../constants/data/bubble';
+import MyMarker from "../common/MyMarker";
+import Bubble from "../common/Bubbles";
 
 const countries = require("i18n-iso-countries");
 const countriesJSON = require("i18n-iso-countries/langs/zh.json");
@@ -23,30 +21,17 @@ const wrapperStyles = {
   margin: 0,
 }
 
-const cityScale = scaleLinear()
-  .domain([0,37843000])
-  .range([1,25])
+Bubble.defaultProps = {
+  componentIdentifier: "Markers",
+  groupName: "markers",
+  itemName: "marker",
+}
 
-const Bubbles = () => {
-  return (
-    <Markers>
-      {
-        popularCities.map((city, i) => (
-          <Marker key={i} marker={city}>
-            <circle
-              cx={0}
-              cy={0}
-              r={cityScale(2)}
-              fill="rgba(255,87,34,0.8)"
-              stroke="#607D8B"
-              strokeWidth="2"
-            />
-          </Marker>
-        ))
-      }
-    </Markers>
-  );
-} 
+MyMarker.defaultProps = {
+  componentIdentifier: "Markers",
+  groupName: "markers",
+  itemName: "marker",
+}
 
 
 class BasicMap extends Component {
@@ -105,7 +90,8 @@ class BasicMap extends Component {
                 />
               ))}
             </Geographies>
-            <Bubbles />
+            <Bubble />
+            <MyMarker />
             <Graticule step={[20,8]}/>
           </ZoomableGroup>
         </ComposableMap>
