@@ -12,7 +12,6 @@ import { popularCities } from '../constants/data/bubble';
 class Bubbles extends React.Component {
 
     componentDidMount() {
-        console.log(popularCities)
         this.props.updateBubble(popularCities);
     }
 
@@ -21,7 +20,6 @@ class Bubbles extends React.Component {
             .domain([0,37843000])
             .range([1,25])
         const { bubbles } = this.props.bubbles;
-        console.log(this.props)
         return (
             <Markers {...this.props}>
             {

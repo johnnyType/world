@@ -90,8 +90,6 @@ class BasicMap extends Component {
                 />
               ))}
             </Geographies>
-            <Bubble />
-            <MyMarker />
             <Graticule step={[20,8]}/>
           </ZoomableGroup>
         </ComposableMap>
